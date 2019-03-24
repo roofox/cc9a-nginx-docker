@@ -1,0 +1,24 @@
+version: "3.5"
+services:
+    node:
+        container_name: cc9a-nginx-docker-node
+        image: roofox/cc9a-nginx-docker-node:0.1
+        ports:
+            - "3618:80"
+        networks: 
+            - nginx-docker-network
+    python:
+        container_name: cc9a-nginx-docker-python
+        image: roofox/cc9a-nginx-docker-python:0.1
+        ports:
+            - "3620:80"
+    php:
+        container_name: cc9a-nginx-docker-php
+        image: roofox/cc9a-nginx-docker-php:0.1
+        ports:
+            - "3622:80"
+networks:
+    nginx-docker-network:
+        name: cc9a-nginx-docker-network
+        driver: bridge
+
